@@ -3,9 +3,53 @@ public class Input {
 
     Scanner scanner = new Scanner(System.in);
 
+    public int getInt(){
+        int number = -1;
+        do {
+            if (scanner.hasNextInt()) {
+                number = scanner.nextInt();
+            }
+            scanner.nextLine();
+        } while(number == -1);
 
+        return number;
 
+    }
+    public int getInt(String prompt){
+        int number = -1;
+        do {
+            System.out.println(prompt);
+            if (scanner.hasNextInt()) {
+                number = scanner.nextInt();
+            }
+            scanner.nextLine();
+        } while(number == -1);
+        return number;
+    }
+    public int getInt(int betweenX, int andY){
+        int number = -1;
+        do {
+            if (scanner.hasNextInt()) {
+                number = scanner.nextInt();
+            }
+            scanner.nextLine();
+        } while(number < betweenX || number > andY);
 
+        return number;
+
+    }
+    public int getInt(String prompt, int betweenX, int andY){
+        int number = -1;
+        do {
+            System.out.println(prompt);
+            if (scanner.hasNextInt()) {
+                number = scanner.nextInt();
+            }
+            scanner.nextLine();
+        } while(number < betweenX || number > andY);
+
+        return number;
+    }
 
     public String getDay(){
         String fullDate;
