@@ -19,7 +19,7 @@ public class Date {
 
         long daysBetween = ChronoUnit.DAYS.between(membersBirthday, today);
 
-        Boolean isOver18;
+        boolean isOver18;
 
         // You are 18, if you are 6574 days old.
         if (daysBetween > 6574){
