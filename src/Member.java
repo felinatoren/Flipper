@@ -2,14 +2,13 @@
 import java.util.ArrayList;
 public class Member {
 
-    boolean active = true;
-    String birthday = "0";
-    String navn = "0";
-    int restance = 0;
-    int memberID = 0;
+    private boolean active;
+    private String birthday;
+    private String name;
+    private int restance;
+    private int memberID;
 
-    ArrayList<String> elite = new ArrayList<String>();
+
 }
 
-    public ArrayList []{
-        }
+

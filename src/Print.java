@@ -1,7 +1,9 @@
 public class Print {
 
-    public void printToday(String date){
-        System.out.println("I dag er den " + date);
+    Date currentDate = new Date();
+
+    public void printToday(){
+        System.out.println("I dag er den " + currentDate.toString(currentDate.today));
     }
     public String chooseMenuPoint(){
         return "\nVælg menupunkt:";
@@ -13,7 +15,7 @@ public class Print {
         System.out.println("Returnerer til den administrative menu.\n");
     }
     public void mainMenuDisplay(){
-        System.out.println("Svømmeklubben Flippers administrative Menu.\n");
+        System.out.println("Svømmeklubben Flippers administrative Menu. " + currentDate.toString(currentDate.today) + "\n");
         System.out.println("1 for Medlems menu.");
         System.out.println("2 for Finans menu.");
         System.out.println("3 for Svømme resultats menu.");

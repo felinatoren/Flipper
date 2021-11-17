@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
@@ -6,6 +7,16 @@ import java.util.Scanner;
 public class Date {
 
     LocalDate today = LocalDate.now();
+
+
+    public String toString(LocalDate today){
+        int day = today.getDayOfMonth();
+        int month = today.getMonthValue();
+        int year = today.getYear();
+
+
+        return day + "/" + month + "/" + year;
+    }
 
     public boolean isOver18(String birthday){
         Scanner scanner = new Scanner(birthday);

@@ -9,9 +9,6 @@ public class Menu {
 
         System.out.println("Read File");
 
-        System.out.println("Ask for date");
-
-        // print.printToday(input.getDay());
 
         do {
             print.mainMenuDisplay();
