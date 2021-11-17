@@ -2,6 +2,7 @@ public class Menu {
 
     Input input = new Input();
     Print print = new Print();
+    Date date = new Date();
 
     public void run(){
         boolean running = true;
@@ -9,9 +10,8 @@ public class Menu {
 
         System.out.println("Read File");
 
-
         do {
-            print.mainMenuDisplay();
+            print.mainMenuDisplay(date.toString(date.today));
             menuChoice = input.getInt(print.chooseMenuPoint(), 1, 4);
 
             switch (menuChoice){

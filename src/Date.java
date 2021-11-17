@@ -9,11 +9,10 @@ public class Date {
     LocalDate today = LocalDate.now();
 
 
-    public String toString(LocalDate today){
-        int day = today.getDayOfMonth();
-        int month = today.getMonthValue();
-        int year = today.getYear();
-
+    public String toString(LocalDate date){
+        int day = date.getDayOfMonth();
+        int month = date.getMonthValue();
+        int year = date.getYear();
 
         return day + "/" + month + "/" + year;
     }
