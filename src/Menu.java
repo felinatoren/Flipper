@@ -4,6 +4,9 @@ public class Menu {
     Print print = new Print();
     Date date = new Date();
 
+    FileHandler file = new FileHandler("Files/SwimResults", "Files/Member");
+    MemberList memberList = new MemberList(file.loadMembers());
+
     public void run(){
         boolean running = true;
         int menuChoice;
