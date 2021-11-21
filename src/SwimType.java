@@ -3,6 +3,5 @@ public enum SwimType {
     BACKSTROKE,
     FREE,
     BUTTERFLY,
-    BREAST
+    BREAST,
 }
-

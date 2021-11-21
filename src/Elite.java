@@ -6,19 +6,27 @@ public class Elite extends Member {
 
     private ArrayList<SwimType> swimType = new ArrayList<>();
 
+
+
+    Elite(String name, String birthday, ArrayList<SwimType> swimType){
+        super(name, birthday);
+        this.swimType = swimType;
+    }
+
+    // from file
     Elite(String fromFile) {
         super(fromFile);
 
         String[] list = fromFile.split(";");
 
         this.swimType = loadSwimTypesFromString(list[6]);
-
     }
+
+
+
     private ArrayList<SwimType> loadSwimTypesFromString(String fromFile) {
-        String[] list = fromFile.split(";");
 
-        String[] listOfSwimTypes = list[0].split(",");
-
+        String[] listOfSwimTypes = fromFile.split(",");
 
         ArrayList<SwimType> swimTypes = new ArrayList<>();
 
