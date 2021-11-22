@@ -6,12 +6,13 @@ public class Menu {
 
     FileHandler file = new FileHandler("Files/SwimResults", "Files/Member");
     MemberList memberList = new MemberList(file.loadMembers());
+    RecordTime timeList = new RecordTime(file.loadSwimResults());
 
     public void run(){
         boolean running = true;
         int menuChoice;
 
-        System.out.println("Read File");
+        System.out.println(timeList.recordTime.toString());
 
         do {
             print.mainMenuDisplay(date.toString(date.today));
