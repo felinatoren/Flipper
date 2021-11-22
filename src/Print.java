@@ -71,7 +71,6 @@ public class Print {
 
     public void printSwimTypesDisplay(){
         // TODO EVT FÅ PRINT TIL AT FJERNE SVØMME DICIPLINERNE NÅR MAN VÆGLER DEM.
-
         System.out.println("Svømme dicipliner:");
         System.out.println(" [1] Crawl");
         System.out.println(" [2] Ryg Crawl:");
