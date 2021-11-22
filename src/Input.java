@@ -80,7 +80,6 @@ public class Input {
             scanner.nextLine();
         }while(year <= 1900);
 
-
         fullDate = date + "/" + month + "/" + year;
 
       return fullDate;
@@ -156,9 +155,7 @@ public class Input {
     }
 
     public SwimType getSwimType(){
-            boolean correctInput = false;
 
-        do {
             switch (getInt(1, 6)) {
                 case 1:
                     return SwimType.CRAWL;
@@ -172,14 +169,7 @@ public class Input {
                     return SwimType.BREAST;
                 case 6:
                     return null;
-                default:
-                    correctInput = false;
             }
-
-        } while (correctInput);
-
         return null;
     }
-
-
 }
