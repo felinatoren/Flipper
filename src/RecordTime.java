@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class RecordTime {
+public class RecordTime{
 
     ArrayList<SwimResult> breastResults = new ArrayList<>();
     ArrayList<SwimResult> crawlResults = new ArrayList<>();
@@ -13,6 +13,29 @@ public class RecordTime {
     public RecordTime(ArrayList<String> fromFile){
         this.recordTime = fileToTime(fromFile);
     }
+    public void assignResultsBySwimType(ArrayList<SwimResult> recordTime){
+
+        for(int i = 0; i < recordTime.size(); i++){
+
+            if(recordTime.get(i).getType().equalsIgnoreCase("BREAST")){
+                breastResults.add(recordTime.get(i));
+            }
+            else if(recordTime.get(i).getType().equalsIgnoreCase("CRAWL")){
+                crawlResults.add(recordTime.get(i));
+            }
+            else if(recordTime.get(i).getType().equalsIgnoreCase("BACKSTROKE")){
+                backStrokeResults.add(recordTime.get(i));
+            }
+            else if(recordTime.get(i).getType().equalsIgnoreCase("BUTTERFLY")){
+                butterflyResults.add(recordTime.get(i));
+            }
+            else if(recordTime.get(i).getType().equalsIgnoreCase("FREE")){
+                freeResults.add(recordTime.get(i));
+            }
+        }
+    }
+
+
 
     public ArrayList<SwimResult> fileToTime(ArrayList<String> fromFile){
 

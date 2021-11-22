@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SwimResult {
+public class SwimResult implements Comparable<SwimResult>{
     private int memberID;
     private String name;
     private String date;
@@ -9,6 +9,11 @@ public class SwimResult {
     private String competitionName;
     private int position;
 
+
+    @Override
+    public int compareTo(SwimResult s) {
+        return this.time - s.time;
+    }
 
     public SwimResult(){}
 
@@ -36,5 +41,28 @@ public class SwimResult {
 
     public String toString(){
         return memberID + " " + name;
+    }
+
+    public String getType(){
+        return type;
+    }
+    public String getName(){
+        return name;
+    }
+
+    public String getCompetitionName() {
+        return competitionName;
+    }
+
+    public int getTime() {
+        return time;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public int getPosition() {
+        return position;
     }
 }

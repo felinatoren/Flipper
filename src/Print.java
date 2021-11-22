@@ -89,4 +89,68 @@ public class Print {
     public void askMemberType(){
         System.out.println("[1] Motionist | [2] Elite ");
     }
+    public void hallOfFame(ArrayList<SwimResult> free, ArrayList<SwimResult> crawl, ArrayList<SwimResult> butterfly,
+                           ArrayList<SwimResult> breast, ArrayList<SwimResult> backstroke){
+
+        System.out.println("FRI\n");
+
+        for(int i = 0; i < free.size() && i < 5; i++){
+            if(free.get(i).getCompetitionName() == null){
+            System.out.println(free.get(i).getName() + " : Fri " + free.get(i).getTime() + " sekunder, trænings resultat fra " + free.get(i).getDate());
+            }
+            else{
+                System.out.println(free.get(i).getName() + " : Fri " + free.get(i).getTime() + " sekunder, resultat fra "
+                        + free.get(i).getCompetitionName() + " " + free.get(i).getDate() + ". Placering nummer: " + free.get(i).getPosition());
+            }
+
+        }
+        System.out.println("\nCRAWL\n");
+
+        for(int i = 0; i < crawl.size() && i < 5; i++){
+            if(crawl.get(i).getCompetitionName() == null){
+                System.out.println(crawl.get(i).getName() + " : Crawl " + crawl.get(i).getTime() + " sekunder, trænings resultat fra " + crawl.get(i).getDate());
+            }
+            else{
+                System.out.println(crawl.get(i).getName() + " : Crawl " + crawl.get(i).getTime() + " sekunder, resultat fra "
+                        + crawl.get(i).getCompetitionName() + " " + crawl.get(i).getDate() + ". Placering nummer: " + crawl.get(i).getPosition());
+            }
+
+        }
+        System.out.println("\nBUTTERFLY\n");
+
+        for(int i = 0; i < butterfly.size() && i < 5; i++){
+            if(butterfly.get(i).getCompetitionName() == null){
+                System.out.println(butterfly.get(i).getName() + " : Butterfly " + butterfly.get(i).getTime() + " sekunder, trænings resultat fra " + butterfly.get(i).getDate());
+            }
+            else{
+                System.out.println(butterfly.get(i).getName() + " : Butterfly " + butterfly.get(i).getTime() + " sekunder, resultat fra "
+                        + butterfly.get(i).getCompetitionName() + " " + butterfly.get(i).getDate() + ". Placering nummer: " + butterfly.get(i).getPosition());
+            }
+
+        }
+        System.out.println("\nBRYSTSVØMNING\n");
+        for(int i = 0; i < breast.size() && i < 5; i++){
+            if(breast.get(i).getCompetitionName() == null){
+                System.out.println(breast.get(i).getName() + " : Bryst " + breast.get(i).getTime() + " sekunder, trænings resultat fra " + breast.get(i).getDate());
+            }
+            else{
+                System.out.println(breast.get(i).getName() + " : Bryst " + breast.get(i).getTime() + " sekunder, resultat fra "
+                        + breast.get(i).getCompetitionName() + " " + breast.get(i).getDate() + ". Placering nummer: " + breast.get(i).getPosition());
+            }
+
+        }
+        System.out.println("\nRYGCRAWL\n");
+        for(int i = 0; i < backstroke.size() && i < 5; i++){
+            if(free.get(i).getCompetitionName() == null){
+                System.out.println(backstroke.get(i).getName() + " : Ryg " + backstroke.get(i).getTime() + " sekunder, trænings resultat fra " + backstroke.get(i).getDate());
+            }
+            else{
+                System.out.println(backstroke.get(i).getName() + " : Ryg " + backstroke.get(i).getTime() + " sekunder, resultat fra "
+                        + backstroke.get(i).getCompetitionName() + " " + backstroke.get(i).getDate() + ". Placering nummer: " + backstroke.get(i).getPosition());
+            }
+
+        }
+
+
+    }
 }

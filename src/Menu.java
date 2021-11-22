@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Menu {
 
@@ -14,11 +15,10 @@ public class Menu {
         boolean running = true;
         int menuChoice;
 
-        //System.out.println(timeList.recordTime.toString());
+        timeList.assignResultsBySwimType(timeList.recordTime);
 
-        for (int i = 0; i < memberList.getMemberList().size(); i++) {
-            System.out.println(memberList.getMemberList().get(i));
-        }
+        //System.out.println(timeList.freeResults.toString());
+
 
         do {
             print.mainMenuDisplay(date.toString(date.today));
@@ -73,7 +73,15 @@ public class Menu {
                         menuChoice = input.getInt(print.chooseMenuPoint(), 1, 4);
                         switch (menuChoice) {
                             case 1:
-                                System.out.println("hall of fame");
+                                Collections.sort(timeList.freeResults);
+                                Collections.sort(timeList.crawlResults);
+                                Collections.sort(timeList.backStrokeResults);
+                                Collections.sort(timeList.breastResults);
+                                Collections.sort(timeList.butterflyResults);
+
+                                print.hallOfFame(timeList.freeResults, timeList.crawlResults, timeList.butterflyResults,
+                                        timeList.breastResults, timeList.backStrokeResults);
+
                                 break;
                             case 2:
                                 System.out.println("indtast konkurrence-resultat");

@@ -1,9 +1,9 @@
 memberID;name;birthday;active;restance;casual
-1;tobias;07/04/1998;true;10000;casual
-2;Tobias;07/04/1998;true;10000;elite;CRAWL,BREAST,FREE
-1;tobias;07/04/1998;true;-500;member
-1;tobias;07/04/1998;true;10000;member
-1;tobias;07/04/1998;false;10000;member
+1;Tobias;07/04/1998;true;10000;casual
+2;Max;07/04/1998;true;10000;elite;CRAWL,BREAST,FREE
+3;Thomas;07/04/1998;true;-500;member
+4;Silja;07/04/1998;true;10000;member
+5;Birgit;07/04/1998;false;10000;member
 1;tobias;07/04/1998;true;10000;member
 1;tobias;07/04/1998;true;10000;member
 1;tobias;07/04/1998;true;10000;member
