@@ -12,7 +12,6 @@ public class Elite extends Member {
         super(name, birthday);
         this.swimType = swimType;
     }
-
     // from file
     Elite(String fromFile) {
         super(fromFile);
@@ -21,8 +20,6 @@ public class Elite extends Member {
 
         this.swimType = loadSwimTypesFromString(list[6]);
     }
-
-
 
     private ArrayList<SwimType> loadSwimTypesFromString(String fromFile) {
 

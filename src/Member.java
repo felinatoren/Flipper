@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class Member {
@@ -22,6 +21,7 @@ public abstract class Member {
         this.restance = 0;
         this.active = true;
     }
+
     Member(String fromFile){
         Scanner scanner = new Scanner(fromFile);
         scanner.useDelimiter(";");
@@ -32,9 +32,6 @@ public abstract class Member {
         this.active = scanner.nextBoolean();
         this.restance = scanner.nextInt();
     }
-
-
-
 }
 
 

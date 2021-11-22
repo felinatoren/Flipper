@@ -27,7 +27,6 @@ public class SwimResult {
     }
 
     public SwimResult(int memberID, String name, String date, int time, String type){
-
         this.memberID = memberID;
         this.name = name;
         this.date = date;
