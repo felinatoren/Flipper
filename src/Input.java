@@ -133,9 +133,9 @@ public class Input {
 
 
        if (number == 1){
-           memberType = "casual";
+           memberType = "Motionist";
        } else if (number == 2)
-           memberType = "elite";
+           memberType = "Elite";
 
 
        return memberType;

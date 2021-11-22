@@ -33,10 +33,7 @@ public class SwimResult {
         this.date = date;
         this.time = time;
         this.type = type;
-
     }
-
-
 
     public String toString(){
         return memberID + " " + name;
