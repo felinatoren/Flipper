@@ -79,7 +79,7 @@ public class Print {
         System.out.println(" [4] Butterfly:");
         System.out.println(" [5] Breast:");
 
-        System.out.println(" [9] Done:");
+        System.out.println(" [6] Done:");
     }
     public void askForBirthday(){
         System.out.println("Angiv fødselsdato.");
