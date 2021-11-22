@@ -141,7 +141,7 @@ public class Print {
         }
         System.out.println("\nRYGCRAWL\n");
         for(int i = 0; i < backstroke.size() && i < 5; i++){
-            if(free.get(i).getCompetitionName() == null){
+            if(backstroke.get(i).getCompetitionName() == null){
                 System.out.println(backstroke.get(i).getName() + " : Ryg " + backstroke.get(i).getTime() + " sekunder, trænings resultat fra " + backstroke.get(i).getDate());
             }
             else{

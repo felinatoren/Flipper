@@ -15,7 +15,7 @@ public class Menu {
         boolean running = true;
         int menuChoice;
 
-        timeList.assignResultsBySwimType(timeList.recordTime);
+        timeList.assignResultsBySwimType(timeList.recordTime); // kan evt flyttes til res menu
 
         //System.out.println(timeList.freeResults.toString());
 
