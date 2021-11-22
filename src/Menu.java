@@ -16,8 +16,6 @@ public class Menu {
 
         //System.out.println(timeList.recordTime.toString());
 
-
-
         for (int i = 0; i < memberList.getMemberList().size(); i++) {
             System.out.println(memberList.getMemberList().get(i));
         }

@@ -70,7 +70,7 @@ public class Input {
                 month = scanner.nextInt();
             }
             scanner.nextLine();
-        }while(month <= 0 || date > 12);
+        }while(month <= 0 || month > 12);
 
         do{
             System.out.print("År: ");
@@ -79,7 +79,6 @@ public class Input {
             }
             scanner.nextLine();
         }while(year <= 1900);
-
 
         fullDate = date + "/" + month + "/" + year;
 
@@ -107,7 +106,7 @@ public class Input {
                 month = scanner.nextInt();
             }
             scanner.nextLine();
-        }while(month <= 0 || date > 12);
+        }while(month < 1 || month > 12);
 
         do{
             System.out.print("År: ");
@@ -156,10 +155,8 @@ public class Input {
     }
 
     public SwimType getSwimType(){
-            boolean correctInput = false;
 
-        do {
-            switch (getInt(1, 9)) {
+            switch (getInt(1, 6)) {
                 case 1:
                     return SwimType.CRAWL;
                 case 2:
@@ -170,16 +167,9 @@ public class Input {
                     return SwimType.BUTTERFLY;
                 case 5:
                     return SwimType.BREAST;
-                case 9:
+                case 6:
                     return null;
-                default:
-                    correctInput = false;
             }
-
-        } while (correctInput);
-
         return null;
     }
-
-
 }
