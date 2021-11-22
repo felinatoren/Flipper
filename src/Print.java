@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Print {
 
     public void printDate(String date){
@@ -38,4 +40,48 @@ public class Print {
         System.out.println("3 for at indtaste trænings resultat.");
         System.out.println("4 retur til den administrative menu.");
     }
+
+    public void printString(String print){
+        System.out.println(print);
+    }
+    public void printMember(Member member){
+
+        if (member instanceof Elite){
+            System.out.println((Elite)member);
+        } else if (member instanceof Casual){
+            System.out.println((Casual)member);
+        } else {
+            System.out.println("Medlem er null");
+        }
+
+    }
+
+
+    public void printSwimTypes(ArrayList<SwimType> list){
+        // TODO EVT FÅ DEN TIL AT PRINTE DEM LIDT PÆNNERE UD
+        System.out.println("Svømme dicipliner:");
+
+        for (int i = 0; i < list.size(); i++ ){
+            System.out.println(list.get(i));
+        }
+
+
+
+    }
+
+    public void printSwimTypesDisplay(){
+        // TODO EVT FÅ PRINT TIL AT FJERNE SVØMME DICIPLINERNE NÅR MAN VÆGLER DEM.
+
+        System.out.println("Svømme dicipliner:");
+        System.out.println(" [1] Crawl");
+        System.out.println(" [2] Ryg Crawl:");
+        System.out.println(" [3] Free:");
+        System.out.println(" [4] Butterfly:");
+        System.out.println(" [5] Breast:");
+
+        System.out.println(" [9] Done:");
+
+
+    }
+
 }

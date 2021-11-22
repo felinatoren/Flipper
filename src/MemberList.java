@@ -23,24 +23,32 @@ public class MemberList {
             String[] list = stringMember.split(";");
 
 
-            if (list[5].equals("member")){
-                listOfMembers.add(new Member(fromFile.get(i)));
+            if (list[5].equals("casual")){
+                listOfMembers.add(new Casual(fromFile.get(i)));
             } else if (list[5].equals("elite")){
                 listOfMembers.add(new Elite(fromFile.get(i)));
             }
 
-            /*
-            (list[5].equals("elite")) {
-                member = new Elite(fromFile.get(i));
-            }
-
-
-             */
         }
-
         return listOfMembers;
     }
 
+
+
+    public Member addEliteMember(String name, String birthday, ArrayList<SwimType> swimType){
+        Member member = new Elite(name, birthday, swimType);
+        memberList.add(member);
+
+        return member;
+    }
+
+    public Member addCasualMember(String name, String birthday){
+
+        Member member = new Casual(name, birthday);
+        memberList.add(member);
+
+        return member;
+    }
 
 
 

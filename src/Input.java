@@ -50,7 +50,6 @@ public class Input {
 
         return number;
     }
-
     public String getDay(){
         String fullDate;
         int date = 0;
@@ -86,7 +85,6 @@ public class Input {
 
       return fullDate;
     }
-
     public String getDay(String prompt){
         String fullDate;
         int date = 0;
@@ -125,11 +123,63 @@ public class Input {
         return fullDate;
     }
 
+    public String getString(){
+        return scanner.nextLine();
+    }
+
+    public String getMemberType(){
+       int number = getInt(1,2);
+       String memberType = "";
 
 
+       if (number == 1){
+           memberType = "casual";
+       } else if (number == 2)
+           memberType = "elite";
 
 
+       return memberType;
+    }
 
+    public boolean getBoolean(){
+        int number = getInt(1,2);
+        boolean memberType = false;
+
+
+        if (number == 1){
+            memberType = true;
+        } else if (number == 2)
+            memberType = false;
+
+
+        return memberType;
+    }
+
+    public SwimType getSwimType(){
+            boolean correctInput = false;
+
+        do {
+            switch (getInt(1, 9)) {
+                case 1:
+                    return SwimType.CRAWL;
+                case 2:
+                    return SwimType.BACKSTROKE;
+                case 3:
+                    return SwimType.FREE;
+                case 4:
+                    return SwimType.BUTTERFLY;
+                case 5:
+                    return SwimType.BREAST;
+                case 9:
+                    return null;
+                default:
+                    correctInput = false;
+            }
+
+        } while (correctInput);
+
+        return null;
+    }
 
 
 }

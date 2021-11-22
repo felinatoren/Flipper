@@ -1,5 +1,5 @@
-memberID;name;birthday;active;restance;member
-1;tobias;07/04/1998;true;10000;member
+memberID;name;birthday;active;restance;casual
+1;tobias;07/04/1998;true;10000;casual
 2;Tobias;07/04/1998;true;10000;elite;CRAWL,BREAST,FREE
 1;tobias;07/04/1998;true;-500;member
 1;tobias;07/04/1998;true;10000;member

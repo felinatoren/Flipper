@@ -17,7 +17,7 @@ public class Date {
         return day + "/" + month + "/" + year;
     }
 
-    public boolean isOver18(String birthday){
+    public boolean isSenior(String birthday){
         Scanner scanner = new Scanner(birthday);
         scanner.useDelimiter("/");
 
@@ -29,14 +29,14 @@ public class Date {
 
         long daysBetween = ChronoUnit.DAYS.between(membersBirthday, today);
 
-        boolean isOver18;
+        boolean isSenior;
 
         // You are 18, if you are 6574 days old.
         if (daysBetween > 6574){
-            isOver18 = true;
+            isSenior = true;
         } else
-            isOver18 = false;
+            isSenior = false;
 
-        return isOver18;
+        return isSenior;
     }
 }
