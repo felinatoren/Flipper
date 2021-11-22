@@ -14,9 +14,9 @@ public class Menu {
         boolean running = true;
         int menuChoice;
 
-        System.out.println(timeList.recordTime.toString());
+        //System.out.println(timeList.recordTime.toString());
 
-        addMember();
+
 
         for (int i = 0; i < memberList.getMemberList().size(); i++) {
             System.out.println(memberList.getMemberList().get(i));
@@ -105,26 +105,27 @@ public class Menu {
         boolean isCorrectMember = false;
 
         do {
-            print.printString("name: ");
+            print.printString("Navn: ");
             name = input.getString();
 
             // printer selv ud fra input klassen
+            print.askForBirthday();
             birthday = input.getDay();
 
-            print.printString("[1] Motionist | [2] Elite ");
+            print.askMemberType();
             memberType = input.getMemberType();
 
-            if (memberType.equals("casual")) {
+            if (memberType.equals("Motionist")) {
                 print.printString(name);
                 print.printString(birthday);
                 print.printString(memberType);
 
                 // TODO Hvis mere tid kan man sætte en abort in her
-                print.printString("Confimer Medlem : [1] Accepter | [2] Lav om");
+                print.acceptMember();
                 isCorrectMember = input.getBoolean();
 
                 memberList.addCasualMember(name, birthday);
-            } else if (memberType.equals("elite")) {
+            } else if (memberType.equals("Elite")) {
 
                 ArrayList<SwimType> swimTypes = new ArrayList<>();
                 boolean moreSwimTypes = true;
@@ -147,7 +148,7 @@ public class Menu {
                 print.printString(memberType);
 
                 // TODO Hvis mere tid kan man sætte en abort in her
-                print.printString("Confimer Medlem : [1] Accepter | [2] Lav om");
+                print.acceptMember();
                 isCorrectMember = input.getBoolean();
 
 

@@ -80,8 +80,14 @@ public class Print {
         System.out.println(" [5] Breast:");
 
         System.out.println(" [9] Done:");
-
-
     }
-
+    public void askForBirthday(){
+        System.out.println("Angiv fødselsdato.");
+    }
+    public void acceptMember(){
+        System.out.println("Accepter medlem : [1] Accepter | [2] Lav om");
+    }
+    public void askMemberType(){
+        System.out.println("[1] Motionist | [2] Elite ");
+    }
 }
