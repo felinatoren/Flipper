@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class RecordTime{
 
     Input input = new Input();
+    Print print = new Print();
 
     ArrayList<SwimResult> breastResults = new ArrayList<>();
     ArrayList<SwimResult> crawlResults = new ArrayList<>();
@@ -76,7 +77,8 @@ public class RecordTime{
         compResult.setName(input.getString("Navn:"));
         compResult.setDate(input.getDay("Dato:"));
         compResult.setTime(input.getInt("Tid:"));
-        compResult.setType("Sømmedisciplin:");
+        print.printSwimTypesDisplayForResult();
+        compResult.setType(input.getSwimTypForResults());
         compResult.setCompetitionName(input.getString("Stævne navn:"));
         compResult.setPosition(input.getInt("Placering:"));
 
@@ -89,7 +91,8 @@ public class RecordTime{
         trainingResult.setName(input.getString("Navn:"));
         trainingResult.setDate(input.getDay("Dato:"));
         trainingResult.setTime(input.getInt("Tid:"));
-        trainingResult.setType("Sømmedisciplin:");
+        print.printSwimTypesDisplayForResult();
+        trainingResult.setType(input.getSwimTypForResults());
 
         recordTime.add(trainingResult);
     }

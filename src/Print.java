@@ -68,6 +68,14 @@ public class Print {
 
 
     }
+    public void printSwimTypesDisplayForResult(){
+        System.out.println("Vælg svømme diciplin:");
+        System.out.println(" [1] Crawl");
+        System.out.println(" [2] Ryg Crawl:");
+        System.out.println(" [3] Free:");
+        System.out.println(" [4] Butterfly:");
+        System.out.println(" [5] Breast:");
+    }
 
     public void printSwimTypesDisplay(){
         // TODO EVT FÅ PRINT TIL AT FJERNE SVØMME DICIPLINERNE NÅR MAN VÆGLER DEM.

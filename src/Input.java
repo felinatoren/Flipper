@@ -175,4 +175,20 @@ public class Input {
             }
         return null;
     }
+    public String getSwimTypForResults(){
+
+        switch (getInt(1, 5)) {
+            case 1:
+                return "CRAWL";
+            case 2:
+                return "BACKSTROKE";
+            case 3:
+                return "FREE";
+            case 4:
+                return "BUTTERFLY";
+            case 5:
+                return "BREAST";
+            }
+        return null;
+    }
 }
