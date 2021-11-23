@@ -39,6 +39,13 @@ public class SwimResult implements Comparable<SwimResult>{
         this.type = type;
     }
 
+    public String toFile(){
+        if(this.competitionName == null)
+            return memberID + ";" + name + ";" + date + ";" + time + ";" + type;
+
+        return memberID + ";" + name + ";" + date + ";" + time + ";" + type + ";" + competitionName + ";" + position;
+    }
+
     public String toString(){
         return memberID + " " + name;
     }
@@ -65,4 +72,33 @@ public class SwimResult implements Comparable<SwimResult>{
     public int getPosition() {
         return position;
     }
+
+    public void setMemberID(int memberID) {
+        this.memberID = memberID;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setCompetitionName(String competitionName) {
+        this.competitionName = competitionName;
+    }
+
 }

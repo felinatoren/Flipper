@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 public class RecordTime{
 
+    Input input = new Input();
+
     ArrayList<SwimResult> breastResults = new ArrayList<>();
     ArrayList<SwimResult> crawlResults = new ArrayList<>();
     ArrayList<SwimResult> backStrokeResults = new ArrayList<>();
@@ -50,4 +52,46 @@ public class RecordTime{
 
        return listOfResults;
     }
+
+    public ArrayList<String> saveResultListToFile() {
+        ArrayList<String> resultListToFile = new ArrayList<>();
+
+        for (int i = 0; i < recordTime.size(); i++) {
+            SwimResult swimResult = recordTime.get(i);
+            String resultToFile;
+
+            resultToFile = swimResult.toFile();
+
+            resultListToFile.add(resultToFile);
+        }
+
+        return resultListToFile;
+    }
+
+    public void newCompetitiveResult(){
+
+        SwimResult compResult = new SwimResult();
+
+        compResult.setMemberID(input.getInt("ID:"));
+        compResult.setName(input.getString("Navn:"));
+        compResult.setDate(input.getDay("Dato:"));
+        compResult.setTime(input.getInt("Tid:"));
+        compResult.setType("Sømmedisciplin:");
+        compResult.setCompetitionName(input.getString("Stævne navn:"));
+        compResult.setPosition(input.getInt("Placering:"));
+
+        recordTime.add(compResult);
+    }
+    public void newTrainingResult(){
+        SwimResult trainingResult = new SwimResult();
+
+        trainingResult.setMemberID(input.getInt("ID:"));
+        trainingResult.setName(input.getString("Navn:"));
+        trainingResult.setDate(input.getDay("Dato:"));
+        trainingResult.setTime(input.getInt("Tid:"));
+        trainingResult.setType("Sømmedisciplin:");
+
+        recordTime.add(trainingResult);
+    }
+
 }

@@ -125,6 +125,10 @@ public class Input {
     public String getString(){
         return scanner.nextLine();
     }
+    public String getString(String prompt){
+        System.out.println(prompt);
+        return scanner.nextLine();
+    }
 
     public String getMemberType(){
        int number = getInt(1,2);

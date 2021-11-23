@@ -85,10 +85,12 @@ public class Menu {
 
                                 break;
                             case 2:
-                                System.out.println("indtast konkurrence-resultat");
+                                timeList.newCompetitiveResult();
+                                file.saveSwimResults(timeList.saveResultListToFile());
                                 break;
                             case 3:
-                                System.out.println("trænings-resultat");
+                                timeList.newTrainingResult();
+                                file.saveSwimResults(timeList.saveResultListToFile());
                                 break;
                             case 4:
                                 print.returnToMainMenu();
