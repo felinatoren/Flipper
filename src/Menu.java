@@ -33,13 +33,8 @@ public class Menu {
                         menuChoice = input.getInt(print.chooseMenuPoint(), 1, 3);
                         switch (menuChoice) {
                             case 1:
-                                System.out.println("Registrer nyt medlem");
+                                print.registerNewMember();
                                 addMember();
-                                /*
-                                for (int i = 0; i < memberList.getMemberList().size(); i++){
-                                    System.out.println(memberList.getMemberList().get(i));
-                                }
-                                 */
                                 break;
                             case 2:
                                 System.out.println("Rediger medlem");

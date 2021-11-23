@@ -83,6 +83,9 @@ public class Print {
     public void askForBirthday(){
         System.out.println("Angiv fødselsdato.");
     }
+    public void registerNewMember(){
+        System.out.println("\nRegistrer nyt medlem.");
+    }
     public void acceptMember(){
         System.out.println("Accepter medlem : [1] Accepter | [2] Lav om");
     }
@@ -92,7 +95,7 @@ public class Print {
     public void hallOfFame(ArrayList<SwimResult> free, ArrayList<SwimResult> crawl, ArrayList<SwimResult> butterfly,
                            ArrayList<SwimResult> breast, ArrayList<SwimResult> backstroke){
 
-        System.out.println("FRI\n");
+        System.out.println("\nFRI\n");
 
         for(int i = 0; i < free.size() && i < 5; i++){
             if(free.get(i).getCompetitionName() == null){
