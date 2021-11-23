@@ -20,6 +20,7 @@ public class Menu {
         //System.out.println(timeList.freeResults.toString());
 
 
+
         do {
             print.mainMenuDisplay(date.toString(date.today));
             menuChoice = input.getInt(print.chooseMenuPoint(), 1, 4);
@@ -34,6 +35,11 @@ public class Menu {
                             case 1:
                                 System.out.println("Registrer nyt medlem");
                                 addMember();
+                                /*
+                                for (int i = 0; i < memberList.getMemberList().size(); i++){
+                                    System.out.println(memberList.getMemberList().get(i));
+                                }
+                                 */
                                 break;
                             case 2:
                                 System.out.println("Rediger medlem");
@@ -130,7 +136,10 @@ public class Menu {
                 print.acceptMember();
                 isCorrectMember = input.getBoolean();
 
-                memberList.addCasualMember(name, birthday);
+                if (isCorrectMember) {
+                    memberList.addCasualMember(name, birthday);
+                }
+
             } else if (memberType.equals("Elite")) {
 
                 ArrayList<SwimType> swimTypes = new ArrayList<>();
@@ -157,9 +166,13 @@ public class Menu {
                 print.acceptMember();
                 isCorrectMember = input.getBoolean();
 
-
-                memberList.addEliteMember(name, birthday, swimTypes);
+                if (isCorrectMember) {
+                    memberList.addEliteMember(name, birthday, swimTypes);
+                }
             }
+
+
+            file.saveMemberList(memberList.saveMemberListToFile());
 
         } while (!isCorrectMember);
     }

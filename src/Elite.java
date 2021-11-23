@@ -18,8 +18,9 @@ public class Elite extends Member {
 
         String[] list = fromFile.split(";");
 
-        this.swimType = loadSwimTypesFromString(list[6]);
+        this.swimType = loadSwimTypesFromString(list[0]);
     }
+
 
     private ArrayList<SwimType> loadSwimTypesFromString(String fromFile) {
 
@@ -51,6 +52,7 @@ public class Elite extends Member {
 
         return swimTypes;
     }
+
     public String toFile() {
         StringBuilder swimTypes = new StringBuilder(";");
 
@@ -62,7 +64,7 @@ public class Elite extends Member {
                 swimTypes.append(",").append(swimType.get(i));
         }
 
-        return memberID + ";" + name + ";" + birthday + ";" + active + ";" + restance + ";" + "elite" + ";" + swimTypes;
+        return memberID + ";" + name + ";" + birthday + ";" + active + ";" + restance + ";" + "elite" + swimTypes;
     }
 
     @Override

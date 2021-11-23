@@ -13,7 +13,7 @@ public class Casual extends Member{
     }
 
     public String toFile(){
-        return memberID + ";" + name + ";" + birthday + ";" + active + ";" + restance + ";" + "member";
+        return memberID + ";" + name + ";" + birthday + ";" + active + ";" + restance + ";" + "casual";
     }
 
 

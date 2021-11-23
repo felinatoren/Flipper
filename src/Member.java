@@ -8,8 +8,6 @@ public abstract class Member {
     public boolean active;
     public int restance;
 
-
-
     Member(String name, String birthday){
         this.name = name;
         this.birthday = birthday;

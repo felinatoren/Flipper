@@ -1,11 +1,10 @@
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileHandler {
-
-    //stringList.add("memberID;name;birthday;active;restance");
 
     private final File swimResults;
     private final File members;
@@ -22,7 +21,6 @@ public class FileHandler {
     public ArrayList<String> loadMembers(){
         return loadFromSave(members);
     }
-
     private ArrayList<String> loadFromSave(File file){
         ArrayList<String> stringList = new ArrayList<>();
 
@@ -34,15 +32,39 @@ public class FileHandler {
 
             while (scanner.hasNextLine()){
                 stringList.add(scanner.nextLine());
+
             }
         }
         catch (Exception e){
-            System.out.println("failed");
+            System.out.println("Failed Saving");
         }
 
-     return stringList;
+        return stringList;
     }
 
+    public void saveSwimResults(ArrayList<String> toFile){
+        // Header for swimResult.
+        toFile.add(0,"memberID;name;date;time;type;competitionName;position");
+        saveList(swimResults, toFile);
+    }
+    public void saveMemberList(ArrayList<String> toFile){
+        // Header for member.
+        toFile.add(0,"memberID;name;birthday;active;restance;memberType;SwimTypes");
+        saveList(members, toFile);
+    }
 
+    private void saveList(File file, ArrayList<String> toFile){
+        try {
+            PrintStream save = new PrintStream(file);
+
+            for (int i = 0; i < toFile.size(); i++){
+                save.println(toFile.get(i));
+            }
+        }
+
+        catch (Exception e){
+            System.out.println("Failed Saving file");
+        }
+    }
 
 }

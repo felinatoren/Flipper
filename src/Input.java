@@ -130,7 +130,6 @@ public class Input {
        int number = getInt(1,2);
        String memberType = "";
 
-
        if (number == 1){
            memberType = "Motionist";
        } else if (number == 2)
