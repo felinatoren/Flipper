@@ -39,4 +39,19 @@ public class Date {
 
         return isSenior;
     }
+
+    public int howOldIsMember(String birthday) {
+        Scanner scanner = new Scanner(birthday);
+        scanner.useDelimiter("/");
+
+        int day = scanner.nextInt();
+        int month = scanner.nextInt();
+        int year = scanner.nextInt();
+
+        LocalDate membersBirthday = LocalDate.of(year,month,day);
+
+        long yearsBetween = ChronoUnit.YEARS.between(membersBirthday, today);
+
+        return (int) yearsBetween;
+    }
 }

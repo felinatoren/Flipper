@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 import java.util.Collections;
-//test
+
 public class Menu {
 
     Input input = new Input();
     Print print = new Print();
     Date date = new Date();
+    Payment payment = new Payment();
 
     FileHandler file = new FileHandler("Files/SwimResults", "Files/Member");
     MemberList memberList = new MemberList(file.loadMembers());
@@ -54,7 +55,6 @@ public class Menu {
                         menuChoice = input.getInt(print.chooseMenuPoint(), 1, 3);
                         switch (menuChoice) {
                             case 1:
-                                System.out.println("se kontingent regnskab");
                                 getTotalPayments();
                                 break;
                             case 2:
@@ -172,9 +172,6 @@ public class Menu {
 
         } while (!isCorrectMember);
     }
-
-
-
     public void addCompetitiveResult(){
         timeList.newCompetitiveResult(input.getInt("ID:"), input.getString("Navn:"),
                 input.getDay("Dato:"),input.getInt("Tid:"),
@@ -193,14 +190,15 @@ public class Menu {
         ArrayList<Member> members = memberList.getMemberList();
         int totalPayments = 0;
 
-
         for (int i = 0; i < members.size(); i++){
+        Member member = members.get(i);
 
+        int age = date.howOldIsMember(member.getBirthday());
+        boolean isActive = member.isActive();
 
-
-
+        totalPayments += payment.calculatedPayment(age, isActive);
         }
-
+        print.totalYearlyPayment(totalPayments);
 
 
     }

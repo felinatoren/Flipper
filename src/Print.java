@@ -160,4 +160,8 @@ public class Print {
 
 
     }
+    public void totalYearlyPayment(int totalYearlyPaymentInt) {
+        System.out.println("total forventet indkomst af årlige kontigent");
+        System.out.println(totalYearlyPaymentInt+"kr.");
+    }
 }

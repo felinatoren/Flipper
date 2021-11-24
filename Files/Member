@@ -10,3 +10,4 @@ memberID;name;birthday;active;restance;memberType;SwimTypes
 0;tobias;1/1/1999;true;0;elite;CRAWL
 0;Jesus;25/12/1999;true;0;elite;CRAWL,FREE
 0;peder;12/12/1999;true;0;elite;CRAWL,FREE
+0;tobi;12/12/1998;true;0;casual

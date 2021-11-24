@@ -30,6 +30,14 @@ public abstract class Member {
         this.active = scanner.nextBoolean();
         this.restance = scanner.nextInt();
     }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
 }
 
 
