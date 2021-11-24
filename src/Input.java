@@ -175,7 +175,10 @@ public class Input {
             }
         return null;
     }
-    public String getSwimTypForResults(){
+    public String getSwimTypForResults(String swimTypes){
+
+        System.out.println(swimTypes);
+
 
         switch (getInt(1, 5)) {
             case 1:

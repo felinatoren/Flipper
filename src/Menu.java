@@ -85,12 +85,10 @@ public class Menu {
 
                                 break;
                             case 2:
-                                timeList.newCompetitiveResult();
-                                file.saveSwimResults(timeList.saveResultListToFile());
+                                addCompetitiveResult();
                                 break;
                             case 3:
-                                timeList.newTrainingResult();
-                                file.saveSwimResults(timeList.saveResultListToFile());
+                                trainingResultAdd();
                                 break;
                             case 4:
                                 print.returnToMainMenu();
@@ -173,10 +171,17 @@ public class Menu {
 
         } while (!isCorrectMember);
     }
-
-    public void seeMember(){
-
-
-
+    public void addCompetitiveResult(){
+        timeList.newCompetitiveResult(input.getInt("ID:"), input.getString("Navn:"),
+                input.getDay("Dato:"),input.getInt("Tid:"),
+                input.getSwimTypForResults(print.printSwimTypesDisplayForResult()),
+                input.getString("Stævne navn:"), input.getInt("Placering:"));
+        file.saveSwimResults(timeList.saveResultListToFile());
+    }
+    public void trainingResultAdd(){
+        timeList.newTrainingResult(input.getInt("ID:"), input.getString("Navn:"),
+                input.getDay("Dato:"),input.getInt("Tid:"),
+                input.getSwimTypForResults(print.printSwimTypesDisplayForResult()));
+        file.saveSwimResults(timeList.saveResultListToFile());
     }
 }

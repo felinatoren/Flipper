@@ -2,8 +2,6 @@ import java.util.ArrayList;
 
 public class RecordTime{
 
-    Input input = new Input();
-    Print print = new Print();
 
     ArrayList<SwimResult> breastResults = new ArrayList<>();
     ArrayList<SwimResult> crawlResults = new ArrayList<>();
@@ -69,30 +67,28 @@ public class RecordTime{
         return resultListToFile;
     }
 
-    public void newCompetitiveResult(){
+    public void newCompetitiveResult(int memberID, String name, String date, int time, String swimType, String competitionName, int position){
 
         SwimResult compResult = new SwimResult();
 
-        compResult.setMemberID(input.getInt("ID:"));
-        compResult.setName(input.getString("Navn:"));
-        compResult.setDate(input.getDay("Dato:"));
-        compResult.setTime(input.getInt("Tid:"));
-        print.printSwimTypesDisplayForResult();
-        compResult.setType(input.getSwimTypForResults());
-        compResult.setCompetitionName(input.getString("Stævne navn:"));
-        compResult.setPosition(input.getInt("Placering:"));
+        compResult.setMemberID(memberID);
+        compResult.setName(name);
+        compResult.setDate(date);
+        compResult.setTime(time);
+        compResult.setType(swimType);
+        compResult.setCompetitionName(competitionName);
+        compResult.setPosition(position);
 
         recordTime.add(compResult);
     }
-    public void newTrainingResult(){
+    public void newTrainingResult(int memberID, String name, String date, int time, String swimType){
         SwimResult trainingResult = new SwimResult();
 
-        trainingResult.setMemberID(input.getInt("ID:"));
-        trainingResult.setName(input.getString("Navn:"));
-        trainingResult.setDate(input.getDay("Dato:"));
-        trainingResult.setTime(input.getInt("Tid:"));
-        print.printSwimTypesDisplayForResult();
-        trainingResult.setType(input.getSwimTypForResults());
+        trainingResult.setMemberID(memberID);
+        trainingResult.setName(name);
+        trainingResult.setDate(date);
+        trainingResult.setTime(time);
+        trainingResult.setType(swimType);
 
         recordTime.add(trainingResult);
     }
