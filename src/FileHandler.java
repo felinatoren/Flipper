@@ -52,7 +52,6 @@ public class FileHandler {
         toFile.add(0,"memberID;name;birthday;active;restance;memberType;SwimTypes");
         saveList(members, toFile);
     }
-
     private void saveList(File file, ArrayList<String> toFile){
         try {
             PrintStream save = new PrintStream(file);

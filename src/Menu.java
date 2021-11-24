@@ -173,4 +173,10 @@ public class Menu {
 
         } while (!isCorrectMember);
     }
+
+    public void seeMember(){
+
+
+
+    }
 }
