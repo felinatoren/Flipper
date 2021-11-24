@@ -68,13 +68,9 @@ public class Print {
 
 
     }
-    public void printSwimTypesDisplayForResult(){
-        System.out.println("Vælg svømme diciplin:");
-        System.out.println(" [1] Crawl");
-        System.out.println(" [2] Ryg Crawl:");
-        System.out.println(" [3] Free:");
-        System.out.println(" [4] Butterfly:");
-        System.out.println(" [5] Breast:");
+    public String printSwimTypesDisplayForResult(){
+        return "\nVælg svømme diciplin:\n [1] Crawl\n [2] Ryg Crawl:\n [3] Free:\n [4] Butterfly:\n [5] Breast:\n";
+
     }
 
     public void printSwimTypesDisplay(){
