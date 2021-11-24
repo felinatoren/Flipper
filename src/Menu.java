@@ -55,6 +55,7 @@ public class Menu {
                         switch (menuChoice) {
                             case 1:
                                 System.out.println("se kontingent regnskab");
+                                getTotalPayments();
                                 break;
                             case 2:
                                 System.out.println("se oversigt over medlemmer i restance");
@@ -171,6 +172,9 @@ public class Menu {
 
         } while (!isCorrectMember);
     }
+
+
+
     public void addCompetitiveResult(){
         timeList.newCompetitiveResult(input.getInt("ID:"), input.getString("Navn:"),
                 input.getDay("Dato:"),input.getInt("Tid:"),
@@ -184,4 +188,21 @@ public class Menu {
                 input.getSwimTypForResults(print.printSwimTypesDisplayForResult()));
         file.saveSwimResults(timeList.saveResultListToFile());
     }
+
+    public void getTotalPayments(){
+        ArrayList<Member> members = memberList.getMemberList();
+        int totalPayments = 0;
+
+
+        for (int i = 0; i < members.size(); i++){
+
+
+
+
+        }
+
+
+
+    }
+
 }
