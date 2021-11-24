@@ -31,7 +31,7 @@ public class Menu {
                     boolean memberMenuRunning = true;
                     do {
                         print.memberMenuDisplay();
-                        menuChoice = input.getInt(print.chooseMenuPoint(), 1, 3);
+                        menuChoice = input.getInt(print.chooseMenuPoint(), 1, 4);
                         switch (menuChoice) {
                             case 1:
                                 print.registerNewMember();
@@ -41,6 +41,9 @@ public class Menu {
                                 System.out.println("Rediger medlem");
                                 break;
                             case 3:
+                                printMemberList();
+                                break;
+                            case 4:
                                 print.returnToMainMenu();
                                 memberMenuRunning = false;
                                 break;
@@ -202,5 +205,8 @@ public class Menu {
 
 
     }
-
+    public void printMemberList(){
+        ArrayList<Member> members = memberList.getMemberList();
+        print.printMemberList(members);
+    }
 }

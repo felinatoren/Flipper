@@ -25,7 +25,8 @@ public class Print {
         System.out.println("\nMedlems menu.\n");
         System.out.println("1 for registrering af nyt medlem.");
         System.out.println("2 for redigering af eksisterende medlem.");
-        System.out.println("3 retur til den administrative menu.");
+        System.out.println("3 se medlemsliste");
+        System.out.println("4 retur til den administrative menu.");
     }
     public void financeMenuDisplay(){
         System.out.println("\nFinans menu.\n");
@@ -163,5 +164,16 @@ public class Print {
     public void totalYearlyPayment(int totalYearlyPaymentInt) {
         System.out.println("total forventet indkomst af årlige kontigent");
         System.out.println(totalYearlyPaymentInt+"kr.");
+    }
+    public void printMemberList(ArrayList<Member> memberList){
+        System.out.println("Liste over medlemmer");
+        for (int i = 0; i< memberList.size(); i++){
+            Member member = memberList.get(i);
+            if (member instanceof Elite){
+                System.out.println(((Elite) member));
+            }  else if (member instanceof Casual){
+                System.out.println(((Casual) member));
+            }
+        }
     }
 }
