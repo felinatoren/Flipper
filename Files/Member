@@ -3,7 +3,14 @@ memberID;name;birthday;active;restance;memberType;SwimTypes
 0;CASLON;8/6/2010;true;0;casual
 0;riann;7/4/1998;true;0;casual
 0;Peter;8/12/1940;true;0;casual
-0;Sofus;8/12/1997;true;0;elite;
+0;Sofus;8/12/1997;true;0;elite;CRAWL,FREE
 0;Dennis;29/3/1976;true;0;casual
-0;Torben;23/6/1998;true;0;elite;
+0;Torben;23/6/1998;true;0;elite;CRAWL,FREE
 0;Anne;3/7/1989;true;0;casual
+0;tobias;1/1/1999;true;0;elite;CRAWL
+0;2;2/2/1999;true;0;elite;CRAWL,FREE
+0;1;1/1/1999;true;0;elite;CRAWL,FREE
+0;22;2/2/2222;true;0;elite;CRAWL,FREE
+0;Jesus;25/12/1999;true;0;elite;CRAWL,FREE
+0;peder;12/12/1999;true;0;elite;CRAWL,FREE
+0;pls virk;12/12/1912;true;0;elite;CRAWL,BACKSTROKE,FREE,BUTTERFLY,BREAST
