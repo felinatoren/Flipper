@@ -20,11 +20,11 @@ public class Casual extends Member{
     @Override
     public String toString() {
         return "Casual{" +
-                "active=" + active +
-                ", birthday='" + birthday + '\'' +
-                ", name='" + name + '\'' +
-                ", restance=" + restance +
                 ", memberID=" + memberID +
+                ", name='" + name + '\'' +
+                ", birthday='" + birthday + '\'' +
+                "active=" + active +
+                ", restance=" + restance +
                 '}';
     }
 }

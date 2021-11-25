@@ -71,12 +71,12 @@ public class Elite extends Member {
     @Override
     public String toString() {
         return "Elite{" +
-                "swimType=" + swimType +
-                ", active=" + active +
-                ", birthday='" + birthday + '\'' +
-                ", name='" + name + '\'' +
-                ", restance=" + restance +
                 ", memberID=" + memberID +
+                ", name='" + name + '\'' +
+                ", birthday='" + birthday + '\'' +
+                ", active=" + active +
+                "swimType=" + swimType +
+                ", restance=" + restance +
                 '}';
     }
 }
