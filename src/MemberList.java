@@ -32,7 +32,6 @@ public class MemberList {
         return listOfMembers;
     }
 
-
     public void addEliteMember(String name, String birthday, ArrayList<SwimType> swimType) {
         Member member = new Elite(name, birthday, swimType);
         memberList.add(member);
