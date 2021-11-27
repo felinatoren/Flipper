@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public abstract class Member {
 
+    static int idCounter;
     public int memberID;
     public  String name;
     public String birthday;

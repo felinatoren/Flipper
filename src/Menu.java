@@ -171,37 +171,40 @@ public class Menu {
 
         } while (!isCorrectMember);
     }
-    public void addCompetitiveResult(){
+
+    public void addCompetitiveResult() {
         timeList.newCompetitiveResult(input.getInt("ID:"), input.getString("Navn:"),
-                input.getDay("Dato:"),input.getInt("Tid:"),
+                input.getDay("Dato:"), input.getInt("Tid:"),
                 input.getSwimTypForResults(print.printSwimTypesDisplayForResult()),
                 input.getString("Stævne navn:"), input.getInt("Placering:"));
         file.saveSwimResults(timeList.saveResultListToFile());
     }
-    public void trainingResultAdd(){
+
+    public void trainingResultAdd() {
         timeList.newTrainingResult(input.getInt("ID:"), input.getString("Navn:"),
-                input.getDay("Dato:"),input.getInt("Tid:"),
+                input.getDay("Dato:"), input.getInt("Tid:"),
                 input.getSwimTypForResults(print.printSwimTypesDisplayForResult()));
         file.saveSwimResults(timeList.saveResultListToFile());
     }
 
-    public void getTotalPayments(){
+    public void getTotalPayments() {
         ArrayList<Member> members = memberList.getMemberList();
         int totalPayments = 0;
 
-        for (int i = 0; i < members.size(); i++){
-        Member member = members.get(i);
+        for (int i = 0; i < members.size(); i++) {
+            Member member = members.get(i);
+            String birthday = member.getBirthday();
+            int age = date.howOldIsMember(birthday);
+            boolean isActive = member.isActive();
 
-        int age = date.howOldIsMember(member.getBirthday());
-        boolean isActive = member.isActive();
-
-        totalPayments += payment.calculatedPayment(age, isActive);
+            totalPayments += payment.calculatedPayment(age, isActive);
         }
         print.totalYearlyPayment(totalPayments);
 
 
     }
-    public void printMemberList(){
+
+    public void printMemberList() {
         ArrayList<Member> members = memberList.getMemberList();
         print.printMemberList(members);
     }
