@@ -8,6 +8,9 @@ public class MemberList {
 
     MemberList(ArrayList<String> fromFile) {
         this.memberList = fileToMember(fromFile);
+        Member idCounter = null;
+
+        setHighestID();
     }
 
     public ArrayList<Member> getMemberList() {
@@ -67,5 +70,21 @@ public class MemberList {
         }
 
         return memberListToFile;
+    }
+
+    public void setHighestID(){
+
+        int highestID = 0;
+
+        for (int i = 0; i < memberList.size(); i++){
+
+            int temp = memberList.get(i).getMemberID();
+
+            if (highestID < temp){
+                highestID = temp;
+            }
+        }
+
+        Member.idCounter = highestID;
     }
 }

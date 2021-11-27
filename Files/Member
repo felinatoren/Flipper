@@ -6,8 +6,10 @@ memberID;name;birthday;active;restance;memberType;SwimTypes
 0;Sofus;8/12/1997;true;0;elite;CRAWL,FREE
 0;Dennis;29/3/1976;true;0;casual
 0;Torben;23/6/1998;true;0;elite;CRAWL,FREE
-0;Anne;3/7/1989;true;0;casual
+10;Anne;3/7/1989;true;0;casual
 0;tobias;1/1/1999;true;0;elite;CRAWL
 0;Jesus;25/12/1999;true;0;elite;CRAWL,FREE
 0;peder;12/12/1999;true;0;elite;CRAWL,FREE
 0;tobi;12/12/1998;true;0;casual
+3;Louise;24/1/1980;true;0;casual
+11;123123123;1/1/1999;true;0;casual

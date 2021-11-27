@@ -2,19 +2,19 @@ import java.util.Scanner;
 
 public abstract class Member {
 
-    static int idCounter;
     public int memberID;
     public  String name;
     public String birthday;
     public boolean active;
     public int restance;
 
+    public static int idCounter;
+
     Member(String name, String birthday){
+        idCounter++;
         this.name = name;
         this.birthday = birthday;
-
-        //todo lavet en ordentlig måde at få et unikt memberID til hvert person.
-        this.memberID = 0;
+        this.memberID = idCounter;
 
         // A new member always starts out as with no dept and active set to true.
         this.restance = 0;
@@ -32,10 +32,12 @@ public abstract class Member {
         this.restance = scanner.nextInt();
     }
 
+    public int getMemberID() {
+        return memberID;
+    }
     public String getBirthday() {
         return birthday;
     }
-
     public boolean isActive() {
         return active;
     }
