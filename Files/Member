@@ -1,7 +1,7 @@
 memberID;name;birthday;active;restance;memberType;SwimTypes
-2;Max;07/04/1998;true;10000;casual
+2;Max;07/04/1998;true;800;casual
 0;Caslon;8/6/2010;true;0;casual
-0;riann;7/4/1998;true;0;casual
+0;riann;7/4/1998;true;350;casual
 0;Peter;8/12/1940;true;0;casual
 0;Sofus;8/12/1997;true;0;elite;CRAWL,FREE
 0;Dennis;29/3/1976;true;0;casual

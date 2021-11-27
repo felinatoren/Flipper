@@ -15,6 +15,11 @@ public class RecordTime{
         this.recordTime = fileToTime(fromFile);
     }
     public void assignResultsBySwimType(ArrayList<SwimResult> recordTime){
+        breastResults.clear();
+        crawlResults.clear();
+        backStrokeResults.clear();
+        freeResults.clear();
+        butterflyResults.clear();
 
         for(int i = 0; i < recordTime.size(); i++){
 

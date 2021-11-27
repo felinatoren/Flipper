@@ -176,4 +176,17 @@ public class Print {
             }
         }
     }
+    public void showMembersInArrears(ArrayList<Member> membersInArrears){
+        int memberID;
+        String name;
+        int arrears;
+
+        for (int i = 0; i < membersInArrears.size(); i++){
+            memberID = membersInArrears.get(i).memberID;
+            name = membersInArrears.get(i).name;
+            arrears = membersInArrears.get(i).restance;
+
+            System.out.println("ID: " + memberID + " ; " + name + " mangler at betale " + arrears + " kr.");
+        }
+    }
 }

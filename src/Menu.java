@@ -16,11 +16,7 @@ public class Menu {
         boolean running = true;
         int menuChoice;
 
-        timeList.assignResultsBySwimType(timeList.recordTime); // kan evt flyttes til res menu, skal slette tidligere resultater så
-
         //System.out.println(timeList.freeResults.toString());
-
-
 
         do {
             print.mainMenuDisplay(date.toString(date.today));
@@ -61,7 +57,7 @@ public class Menu {
                                 getTotalPayments();
                                 break;
                             case 2:
-                                System.out.println("se oversigt over medlemmer i restance");
+                                showMemberArrears();
                                 break;
                             case 3:
                                 print.returnToMainMenu();
@@ -78,6 +74,7 @@ public class Menu {
                         menuChoice = input.getInt(print.chooseMenuPoint(), 1, 4);
                         switch (menuChoice) {
                             case 1:
+                                timeList.assignResultsBySwimType(timeList.recordTime);
                                 Collections.sort(timeList.freeResults);
                                 Collections.sort(timeList.crawlResults);
                                 Collections.sort(timeList.backStrokeResults);
@@ -119,7 +116,6 @@ public class Menu {
             print.printString("Navn: ");
             name = input.getString();
 
-            // printer selv ud fra input klassen
             print.askForBirthday();
             birthday = input.getDay();
 
@@ -208,5 +204,19 @@ public class Menu {
     public void printMemberList(){
         ArrayList<Member> members = memberList.getMemberList();
         print.printMemberList(members);
+    }
+
+    public void showMemberArrears(){
+       ArrayList<Member> members = memberList.getMemberList();
+       ArrayList<Member> arrearMemberList = new ArrayList<>();
+
+       for(int i = 0; i < members.size(); i++){
+           if(members.get(i).restance > 0){
+               arrearMemberList.add(members.get(i));
+           }
+       }
+
+       print.showMembersInArrears(arrearMemberList);
+
     }
 }
