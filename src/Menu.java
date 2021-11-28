@@ -141,7 +141,7 @@ public class Menu {
                 boolean moreSwimTypes = true;
 
                 do {
-                    print.printSwimTypesDisplay();
+                    print.printSwimTypesDisplay(swimTypes);
 
                     SwimType newSwimType = input.getSwimType();
 
