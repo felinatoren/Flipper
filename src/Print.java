@@ -58,17 +58,21 @@ public class Print {
     }
 
 
-    public void printSwimTypes(ArrayList<SwimType> list){
+    public void printSwimTypes(ArrayList<SwimType> list) {
         // TODO EVT FÅ DEN TIL AT PRINTE DEM LIDT PÆNNERE UD
         System.out.println("Svømme dicipliner:");
 
-        for (int i = 0; i < list.size(); i++ ){
-            System.out.println(list.get(i));
+        for (int i = 0; i < list.size(); i++) {
+            switch (list.get(i)) {
+                case CRAWL -> System.out.println(" - Crawl");
+                case BACKSTROKE -> System.out.println(" - Rygcrawl");
+                case FREE -> System.out.println(" - Fri");
+                case BUTTERFLY -> System.out.println(" - Butterfly");
+                case BREAST -> System.out.println(" - Brystsvømning");
+            }
         }
-
-
-
     }
+
     public String printSwimTypesDisplayForResult(){
         return "\nVælg svømme diciplin:\n [1] Crawl\n [2] Ryg Crawl:\n [3] Free:\n [4] Butterfly:\n [5] Breast:\n";
 
@@ -109,7 +113,7 @@ public class Print {
             System.out.println(" [5] Breast:");
         }
 
-        System.out.println(" [6] Done:");
+        System.out.println(" [6] Ikke flere svømmedicipliner:");
 
 
 

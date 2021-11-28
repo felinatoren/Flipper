@@ -123,9 +123,10 @@ public class Menu {
             memberType = input.getMemberType();
 
             if (memberType.equals("Motionist")) {
-                print.printString(name);
-                print.printString(birthday);
-                print.printString(memberType);
+
+                print.printString("Navn: " + name);
+                print.printString("Fødselsdag: " + birthday);
+                print.printString("Medlemstype: " + memberType);
 
                 // TODO Hvis mere tid kan man sætte en abort in her
                 print.acceptMember();
@@ -143,7 +144,7 @@ public class Menu {
                 do {
                     print.printSwimTypesDisplay(swimTypes);
 
-                    SwimType newSwimType = input.getSwimType();
+                    SwimType newSwimType = input.getSwimType(swimTypes);
 
                     if (newSwimType == null) {
                         moreSwimTypes = false;
@@ -152,10 +153,11 @@ public class Menu {
                     }
                 } while (moreSwimTypes);
 
+
+                print.printString("Navn: " + name);
+                print.printString("Fødselsdag: " + birthday);
+                print.printString("Medlemstype: " + memberType);
                 print.printSwimTypes(swimTypes);
-                print.printString(name);
-                print.printString(birthday);
-                print.printString(memberType);
 
                 // TODO Hvis mere tid kan man sætte en abort in her
                 print.acceptMember();

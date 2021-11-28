@@ -14,3 +14,5 @@ memberID;name;birthday;active;restance;memberType;SwimTypes
 3;Louise;24/1/1980;true;0;casual
 11;123123123;1/1/1999;true;0;casual
 12;tobias;2/12/1998;true;0;elite;CRAWL,BACKSTROKE,FREE,BUTTERFLY,BREAST
+13;1;1/1/1987;true;0;elite;CRAWL,BACKSTROKE,FREE,BUTTERFLY,BREAST
+14;tobias;12/12/1999;true;0;elite;CRAWL,BACKSTROKE,FREE,BUTTERFLY
