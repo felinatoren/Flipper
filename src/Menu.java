@@ -167,8 +167,6 @@ public class Menu {
                     memberList.addEliteMember(name, birthday, swimTypes);
                 }
             }
-
-
             file.saveMemberList(memberList.saveMemberListToFile());
 
         } while (!isCorrectMember);
@@ -202,8 +200,6 @@ public class Menu {
             totalPayments += payment.calculatedPayment(age, isActive);
         }
         print.totalYearlyPayment(totalPayments);
-
-
     }
 
     public void printMemberList() {
@@ -220,8 +216,6 @@ public class Menu {
                arrearMemberList.add(members.get(i));
            }
        }
-
        print.showMembersInArrears(arrearMemberList);
-
     }
 }

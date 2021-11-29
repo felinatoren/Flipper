@@ -9,12 +9,6 @@ public class SwimResult implements Comparable<SwimResult>{
     private String competitionName;
     private int position;
 
-
-    @Override
-    public int compareTo(SwimResult s) {
-        return this.time - s.time;
-    }
-
     public SwimResult(){}
 
     public SwimResult(String fromFile){
@@ -44,6 +38,11 @@ public class SwimResult implements Comparable<SwimResult>{
             return memberID + ";" + name + ";" + date + ";" + time + ";" + type;
 
         return memberID + ";" + name + ";" + date + ";" + time + ";" + type + ";" + competitionName + ";" + position;
+    }
+
+    @Override
+    public int compareTo(SwimResult s) {
+        return this.time - s.time;
     }
 
     public String toString(){

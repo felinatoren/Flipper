@@ -30,15 +30,15 @@ public class Print {
     }
     public void financeMenuDisplay(){
         System.out.println("\nFinans menu.\n");
-        System.out.println("1 for se årsregnskab over kontingenter.");
-        System.out.println("2 for at se medlemmer i restance.");
+        System.out.println("1 for, at se årsregnskab over kontingenter.");
+        System.out.println("2 for, at se medlemmer i restance.");
         System.out.println("3 retur til den administrative menu.");
     }
     public void swimResultsMenuDisplay(){
         System.out.println("\nSvømme resultats menu.\n");
-        System.out.println("1 for se top 5 svømme tider i alle discipliner.");
-        System.out.println("2 for at indtaste konkurrence resultat.");
-        System.out.println("3 for at indtaste trænings resultat.");
+        System.out.println("1 for, at se top 5 svømme tider i alle discipliner.");
+        System.out.println("2 for, at indtaste konkurrence resultat.");
+        System.out.println("3 for, at indtaste trænings resultat.");
         System.out.println("4 retur til den administrative menu.");
     }
 
@@ -52,14 +52,13 @@ public class Print {
         } else if (member instanceof Casual){
             System.out.println((Casual)member);
         } else {
-            System.out.println("Medlem er null");
+            System.out.println("Medlem eksisterer ikke.");
         }
 
     }
 
 
     public void printSwimTypes(ArrayList<SwimType> list) {
-        // TODO EVT FÅ DEN TIL AT PRINTE DEM LIDT PÆNNERE UD
         System.out.println("Svømme dicipliner:");
 
         for (int i = 0; i < list.size(); i++) {
@@ -74,7 +73,7 @@ public class Print {
     }
 
     public String printSwimTypesDisplayForResult(){
-        return "\nVælg svømme diciplin:\n [1] Crawl\n [2] Ryg Crawl:\n [3] Free:\n [4] Butterfly:\n [5] Breast:\n";
+        return "\nVælg svømme diciplin:\n [1] Crawl\n [2] Ryg Crawl:\n [3] Fri:\n [4] Butterfly:\n [5] Bryst:\n";
 
     }
 
@@ -104,13 +103,13 @@ public class Print {
             System.out.println(" [2] Ryg Crawl:");
         }
         if (free != null){
-            System.out.println(" [3] Free:");
+            System.out.println(" [3] Fri:");
         }
         if (butterfly != null){
             System.out.println(" [4] Butterfly:");
         }
         if (breast != null){
-            System.out.println(" [5] Breast:");
+            System.out.println(" [5] Bryst:");
         }
 
         System.out.println(" [6] Ikke flere svømmedicipliner:");
@@ -195,8 +194,8 @@ public class Print {
 
     }
     public void totalYearlyPayment(int totalYearlyPaymentInt) {
-        System.out.println("total forventet indkomst af årlige kontigent");
-        System.out.println(totalYearlyPaymentInt+"kr.");
+        System.out.println("Total forventet indkomst af årlige kontigenter:");
+        System.out.println(totalYearlyPaymentInt+" kr.");
     }
     public void printMemberList(ArrayList<Member> memberList){
         System.out.println("Liste over medlemmer");

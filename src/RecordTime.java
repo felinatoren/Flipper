@@ -98,4 +98,9 @@ public class RecordTime{
         recordTime.add(trainingResult);
     }
 
+    public void juniorList(){
+        for(int i = 0; i < recordTime.size(); i++){
+            recordTime.get(i);
+        }
+    }
 }

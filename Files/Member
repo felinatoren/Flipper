@@ -11,8 +11,10 @@ memberID;name;birthday;active;restance;memberType;SwimTypes
 0;Jesus;25/12/1999;true;0;elite;CRAWL,FREE
 0;peder;12/12/1999;true;0;elite;CRAWL,FREE
 0;tobi;12/12/1998;true;0;casual
+0;Tina;2/7/1988;true;0;elite;BACKSTROKE
 3;Louise;24/1/1980;true;0;casual
 11;123123123;1/1/1999;true;0;casual
 12;tobias;2/12/1998;true;0;elite;CRAWL,BACKSTROKE,FREE,BUTTERFLY,BREAST
 13;1;1/1/1987;true;0;elite;CRAWL,BACKSTROKE,FREE,BUTTERFLY,BREAST
 14;tobias;12/12/1999;true;0;elite;CRAWL,BACKSTROKE,FREE,BUTTERFLY
+15;Søren;30/9/1987;true;0;elite;BUTTERFLY

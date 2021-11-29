@@ -16,7 +16,7 @@ public abstract class Member {
         this.birthday = birthday;
         this.memberID = idCounter;
 
-        // A new member always starts out as with no dept and active set to true.
+        // A new member always starts out as with no debt and active set to true.
         this.restance = 0;
         this.active = true;
     }
