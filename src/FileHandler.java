@@ -44,7 +44,7 @@ public class FileHandler {
 
     public void saveSwimResults(ArrayList<String> toFile){
         // Header for swimResult.
-        toFile.add(0,"memberID;name;date;time;type;competitionName;position");
+        toFile.add(0,"memberID;name;date;time;type;isJunior;competitionName;position");
         saveList(swimResults, toFile);
     }
     public void saveMemberList(ArrayList<String> toFile){

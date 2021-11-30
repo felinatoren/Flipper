@@ -150,7 +150,21 @@ public class Input {
 
         return memberType;
     }
+    public boolean getBoolean(String prompt) {
+        System.out.println(prompt);
 
+        int number = getInt(1, 2);
+        boolean memberType = false;
+
+
+        if (number == 1) {
+            memberType = true;
+        } else if (number == 2)
+            memberType = false;
+
+
+        return memberType;
+    }
     public boolean getBoolean() {
         int number = getInt(1, 2);
         boolean memberType = false;

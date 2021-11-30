@@ -16,8 +16,6 @@ public class Menu {
         boolean running = true;
         int menuChoice;
 
-        //System.out.println(timeList.freeResults.toString());
-
         do {
             print.mainMenuDisplay(date.toString(date.today));
             menuChoice = input.getInt(print.chooseMenuPoint(), 1, 4);
@@ -34,7 +32,7 @@ public class Menu {
                                 addMember();
                                 break;
                             case 2:
-                                System.out.println("Rediger medlem");
+                                System.out.println("Rediger medlem"); // evt
                                 break;
                             case 3:
                                 printMemberList();
@@ -71,27 +69,21 @@ public class Menu {
                     boolean swimResultMenuRunning = true;
                     do {
                         print.swimResultsMenuDisplay();
-                        menuChoice = input.getInt(print.chooseMenuPoint(), 1, 4);
+                        menuChoice = input.getInt(print.chooseMenuPoint(), 1, 5);
                         switch (menuChoice) {
                             case 1:
-                                timeList.assignResultsBySwimType(timeList.recordTime);
-                                Collections.sort(timeList.freeResults);
-                                Collections.sort(timeList.crawlResults);
-                                Collections.sort(timeList.backStrokeResults);
-                                Collections.sort(timeList.breastResults);
-                                Collections.sort(timeList.butterflyResults);
-
-                                print.hallOfFame(timeList.freeResults, timeList.crawlResults, timeList.butterflyResults,
-                                        timeList.breastResults, timeList.backStrokeResults);
-
+                                showSeniorHOF();
                                 break;
                             case 2:
-                                addCompetitiveResult();
+                               juniorHOF();
                                 break;
                             case 3:
-                                trainingResultAdd();
+                                addCompetitiveResult();
                                 break;
                             case 4:
+                                trainingResultAdd();
+                                break;
+                            case 5:
                                 print.returnToMainMenu();
                                 swimResultMenuRunning = false;
                                 break;
@@ -174,8 +166,8 @@ public class Menu {
 
     public void addCompetitiveResult() {
         timeList.newCompetitiveResult(input.getInt("ID:"), input.getString("Navn:"),
-                input.getDay("Dato:"), input.getInt("Tid:"),
-                input.getSwimTypForResults(print.printSwimTypesDisplayForResult()),
+                 input.getDay("Dato:"), input.getInt("Tid:"),
+                input.getSwimTypForResults(print.printSwimTypesDisplayForResult()), input.getBoolean(print.isJunior()),
                 input.getString("Stævne navn:"), input.getInt("Placering:"));
         file.saveSwimResults(timeList.saveResultListToFile());
     }
@@ -183,7 +175,7 @@ public class Menu {
     public void trainingResultAdd() {
         timeList.newTrainingResult(input.getInt("ID:"), input.getString("Navn:"),
                 input.getDay("Dato:"), input.getInt("Tid:"),
-                input.getSwimTypForResults(print.printSwimTypesDisplayForResult()));
+                input.getSwimTypForResults(print.printSwimTypesDisplayForResult()), input.getBoolean(print.isJunior()));
         file.saveSwimResults(timeList.saveResultListToFile());
     }
 
@@ -217,5 +209,29 @@ public class Menu {
            }
        }
        print.showMembersInArrears(arrearMemberList);
+    }
+    public void showSeniorHOF(){
+        timeList.assignResultByAge(timeList.recordTime);
+        timeList.assignResultsBySwimType(timeList.senior);
+        Collections.sort(timeList.freeResults);
+        Collections.sort(timeList.crawlResults);
+        Collections.sort(timeList.backStrokeResults);
+        Collections.sort(timeList.breastResults);
+        Collections.sort(timeList.butterflyResults);
+
+        print.hallOfFame(timeList.freeResults, timeList.crawlResults, timeList.butterflyResults,
+                timeList.breastResults, timeList.backStrokeResults);
+    }
+    public void juniorHOF(){
+        timeList.assignResultByAge(timeList.recordTime);
+        timeList.assignResultsBySwimTypeJunior(timeList.junior);
+        Collections.sort(timeList.juniorFreeResults);
+        Collections.sort(timeList.juniorCrawlResults);
+        Collections.sort(timeList.juniorBackStrokeResults);
+        Collections.sort(timeList.juniorBreastResults);
+        Collections.sort(timeList.juniorButterflyResults);
+
+        print.hallOfFame(timeList.juniorFreeResults, timeList.juniorCrawlResults, timeList.juniorButterflyResults,
+                timeList.juniorBreastResults, timeList.juniorBackStrokeResults);
     }
 }

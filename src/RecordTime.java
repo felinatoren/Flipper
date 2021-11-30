@@ -2,12 +2,19 @@ import java.util.ArrayList;
 
 public class RecordTime{
 
-
     ArrayList<SwimResult> breastResults = new ArrayList<>();
     ArrayList<SwimResult> crawlResults = new ArrayList<>();
     ArrayList<SwimResult> backStrokeResults = new ArrayList<>();
     ArrayList<SwimResult> freeResults = new ArrayList<>();
     ArrayList<SwimResult> butterflyResults = new ArrayList<>();
+    ArrayList<SwimResult> juniorBreastResults = new ArrayList<>();
+    ArrayList<SwimResult> juniorCrawlResults = new ArrayList<>();
+    ArrayList<SwimResult> juniorBackStrokeResults = new ArrayList<>();
+    ArrayList<SwimResult> juniorFreeResults = new ArrayList<>();
+    ArrayList<SwimResult> juniorButterflyResults = new ArrayList<>();
+
+    ArrayList<SwimResult> senior = new ArrayList<>();
+    ArrayList<SwimResult> junior = new ArrayList<>();
 
     ArrayList<SwimResult> recordTime;
 
@@ -38,6 +45,44 @@ public class RecordTime{
             else if(recordTime.get(i).getType().equalsIgnoreCase("FREE")){
                 freeResults.add(recordTime.get(i));
             }
+        }
+    }
+
+    public void assignResultsBySwimTypeJunior(ArrayList<SwimResult> recordTime){
+        juniorBreastResults.clear();
+        juniorCrawlResults.clear();
+        juniorBackStrokeResults.clear();
+        juniorFreeResults.clear();
+        juniorButterflyResults.clear();
+
+        for(int i = 0; i < recordTime.size(); i++){
+
+            if(recordTime.get(i).getType().equalsIgnoreCase("BREAST")){
+                juniorBreastResults.add(recordTime.get(i));
+            }
+            else if(recordTime.get(i).getType().equalsIgnoreCase("CRAWL")){
+                juniorCrawlResults.add(recordTime.get(i));
+            }
+            else if(recordTime.get(i).getType().equalsIgnoreCase("BACKSTROKE")){
+                juniorBackStrokeResults.add(recordTime.get(i));
+            }
+            else if(recordTime.get(i).getType().equalsIgnoreCase("BUTTERFLY")){
+                juniorButterflyResults.add(recordTime.get(i));
+            }
+            else if(recordTime.get(i).getType().equalsIgnoreCase("FREE")){
+                juniorFreeResults.add(recordTime.get(i));
+            }
+        }
+    }
+
+    public void assignResultByAge(ArrayList<SwimResult> recordTime){
+        senior.clear();
+        junior.clear();
+        for(int i = 0; i < recordTime.size(); i++){
+            if(recordTime.get(i).isJunior())
+                junior.add(recordTime.get(i));
+            else
+                senior.add(recordTime.get(i));
         }
     }
 
@@ -72,7 +117,8 @@ public class RecordTime{
         return resultListToFile;
     }
 
-    public void newCompetitiveResult(int memberID, String name, String date, int time, String swimType, String competitionName, int position){
+    public void newCompetitiveResult(int memberID, String name, String date, int time, String swimType, boolean isJunior,
+    String competitionName, int position){
 
         SwimResult compResult = new SwimResult();
 
@@ -81,12 +127,13 @@ public class RecordTime{
         compResult.setDate(date);
         compResult.setTime(time);
         compResult.setType(swimType);
+        compResult.setJunior(isJunior);
         compResult.setCompetitionName(competitionName);
         compResult.setPosition(position);
 
         recordTime.add(compResult);
     }
-    public void newTrainingResult(int memberID, String name, String date, int time, String swimType){
+    public void newTrainingResult(int memberID, String name, String date, int time, String swimType, boolean isJunior){
         SwimResult trainingResult = new SwimResult();
 
         trainingResult.setMemberID(memberID);
@@ -94,6 +141,7 @@ public class RecordTime{
         trainingResult.setDate(date);
         trainingResult.setTime(time);
         trainingResult.setType(swimType);
+        trainingResult.setJunior(isJunior);
 
         recordTime.add(trainingResult);
     }

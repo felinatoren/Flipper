@@ -8,6 +8,7 @@ public class SwimResult implements Comparable<SwimResult>{
     private String type;
     private String competitionName;
     private int position;
+    private boolean isJunior;
 
     public SwimResult(){}
 
@@ -18,6 +19,7 @@ public class SwimResult implements Comparable<SwimResult>{
         this.date = scanner.next();
         this.time = scanner.nextInt();
         this.type = scanner.next();
+        this.isJunior = scanner.nextBoolean();
         if(scanner.hasNext()){
         this.competitionName = scanner.next();
         this.position = scanner.nextInt();
@@ -35,9 +37,9 @@ public class SwimResult implements Comparable<SwimResult>{
 
     public String toFile(){
         if(this.competitionName == null)
-            return memberID + ";" + name + ";" + date + ";" + time + ";" + type;
+            return memberID + ";" + name + ";" + date + ";" + time + ";" + type + ";" + isJunior;
 
-        return memberID + ";" + name + ";" + date + ";" + time + ";" + type + ";" + competitionName + ";" + position;
+        return memberID + ";" + name + ";" + date + ";" + time + ";" + type + ";" + isJunior + ";" + competitionName + ";" + position;
     }
 
     @Override
@@ -72,6 +74,10 @@ public class SwimResult implements Comparable<SwimResult>{
         return position;
     }
 
+    public boolean isJunior() {
+        return isJunior;
+    }
+
     public void setMemberID(int memberID) {
         this.memberID = memberID;
     }
@@ -100,4 +106,7 @@ public class SwimResult implements Comparable<SwimResult>{
         this.competitionName = competitionName;
     }
 
+    public void setJunior(boolean junior) {
+        isJunior = junior;
+    }
 }

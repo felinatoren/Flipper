@@ -36,10 +36,11 @@ public class Print {
     }
     public void swimResultsMenuDisplay(){
         System.out.println("\nSvømme resultats menu.\n");
-        System.out.println("1 for, at se top 5 svømme tider i alle discipliner.");
-        System.out.println("2 for, at indtaste konkurrence resultat.");
-        System.out.println("3 for, at indtaste trænings resultat.");
-        System.out.println("4 retur til den administrative menu.");
+        System.out.println("1 for, at se top 5 senior svømme tider i alle discipliner.");
+        System.out.println("2 for, at se top 5 junior svømme tider i alle discipliner.");
+        System.out.println("3 for, at indtaste konkurrence resultat.");
+        System.out.println("4 for, at indtaste trænings resultat.");
+        System.out.println("5 retur til den administrative menu.");
     }
 
     public void printString(String print){
@@ -220,5 +221,8 @@ public class Print {
 
             System.out.println("ID: " + memberID + " ; " + name + " mangler at betale " + arrears + " kr.");
         }
+    }
+    public String isJunior(){
+        return "[1] for junior resultat.\n[2] for senior resultat.";
     }
 }
